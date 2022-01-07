@@ -1,0 +1,29 @@
+server:
+  port: 9998
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/seckill?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: wqc050868
+
+redis:
+  host: localhost
+  port: 6379
+  timeout: 1000
+  jedis:
+    pool:
+      min-idle: 5
+      max-idle: 10
+      max-wait: -1
+
+mybatis:
+  mapper-locations: classpath:/mybatis/mapper/*.xml
+  type-aliases-package: cn.kgc.entities
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    cn.kgc.hellospringbootredis: debug
